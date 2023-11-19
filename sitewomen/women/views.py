@@ -30,7 +30,8 @@ cats_db = [
 def index(request):
     # for woman in Women.objects.all():
     #     woman.save()
-    posts = Women.objects.filter(is_published=1)
+    posts = Women.published.all()
+
     data = {
         'title': 'Главная страница',
         'menu': menu,
